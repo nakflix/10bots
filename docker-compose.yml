@@ -1,0 +1,177 @@
+version: "3.9"
+
+# Single shared .env file in this folder supplies:
+#  - the shared config (APP_ID, API_HASH, OWNER_ID, CHANNEL_ID, FORCE_SUB_*, etc.)
+#  - the per-bot values (BOTn_TOKEN, BOTn_PORT, BOTn_DB_URL, BOTn_DB_NAME)
+#
+# Build once:   docker compose build bot1
+# Run all 10:   docker compose up -d
+# Logs:         docker compose logs -f bot3
+# Stop all:     docker compose down
+
+x-shared-env: &shared-env
+  APP_ID: ${APP_ID}
+  API_HASH: ${API_HASH}
+  OWNER_ID: ${OWNER_ID}
+  CHANNEL_ID: ${CHANNEL_ID}
+  FORCE_SUB_CHANNEL_1: ${FORCE_SUB_CHANNEL_1}
+  FORCE_SUB_CHANNEL_2: ${FORCE_SUB_CHANNEL_2}
+  FORCE_SUB_CHANNEL_3: ${FORCE_SUB_CHANNEL_3}
+  FORCE_SUB_CHANNEL_4: ${FORCE_SUB_CHANNEL_4}
+  TG_BOT_WORKERS: ${TG_BOT_WORKERS}
+  START_MESSAGE: ${START_MESSAGE}
+  FORCE_SUB_MESSAGE: ${FORCE_SUB_MESSAGE}
+  CUSTOM_CAPTION: ${CUSTOM_CAPTION}
+  ADMINS: ${ADMINS}
+  PROTECT_CONTENT: ${PROTECT_CONTENT}
+  DISABLE_CHANNEL_BUTTON: ${DISABLE_CHANNEL_BUTTON}
+
+services:
+  bot1:
+    build: .
+    image: file-share-bot:latest
+    container_name: filesharebot_1
+    restart: unless-stopped
+    ports:
+      - "${BOT1_PORT}:${BOT1_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT1_TOKEN}
+      PORT: ${BOT1_PORT}
+      DATABASE_URL: ${BOT1_DB_URL}
+      DATABASE_NAME: ${BOT1_DB_NAME}
+
+  bot2:
+    image: file-share-bot:latest
+    container_name: filesharebot_2
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT2_PORT}:${BOT2_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT2_TOKEN}
+      PORT: ${BOT2_PORT}
+      DATABASE_URL: ${BOT2_DB_URL}
+      DATABASE_NAME: ${BOT2_DB_NAME}
+
+  bot3:
+    image: file-share-bot:latest
+    container_name: filesharebot_3
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT3_PORT}:${BOT3_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT3_TOKEN}
+      PORT: ${BOT3_PORT}
+      DATABASE_URL: ${BOT3_DB_URL}
+      DATABASE_NAME: ${BOT3_DB_NAME}
+
+  bot4:
+    image: file-share-bot:latest
+    container_name: filesharebot_4
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT4_PORT}:${BOT4_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT4_TOKEN}
+      PORT: ${BOT4_PORT}
+      DATABASE_URL: ${BOT4_DB_URL}
+      DATABASE_NAME: ${BOT4_DB_NAME}
+
+  bot5:
+    image: file-share-bot:latest
+    container_name: filesharebot_5
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT5_PORT}:${BOT5_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT5_TOKEN}
+      PORT: ${BOT5_PORT}
+      DATABASE_URL: ${BOT5_DB_URL}
+      DATABASE_NAME: ${BOT5_DB_NAME}
+
+  bot6:
+    image: file-share-bot:latest
+    container_name: filesharebot_6
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT6_PORT}:${BOT6_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT6_TOKEN}
+      PORT: ${BOT6_PORT}
+      DATABASE_URL: ${BOT6_DB_URL}
+      DATABASE_NAME: ${BOT6_DB_NAME}
+
+  bot7:
+    image: file-share-bot:latest
+    container_name: filesharebot_7
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT7_PORT}:${BOT7_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT7_TOKEN}
+      PORT: ${BOT7_PORT}
+      DATABASE_URL: ${BOT7_DB_URL}
+      DATABASE_NAME: ${BOT7_DB_NAME}
+
+  bot8:
+    image: file-share-bot:latest
+    container_name: filesharebot_8
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT8_PORT}:${BOT8_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT8_TOKEN}
+      PORT: ${BOT8_PORT}
+      DATABASE_URL: ${BOT8_DB_URL}
+      DATABASE_NAME: ${BOT8_DB_NAME}
+
+  bot9:
+    image: file-share-bot:latest
+    container_name: filesharebot_9
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT9_PORT}:${BOT9_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT9_TOKEN}
+      PORT: ${BOT9_PORT}
+      DATABASE_URL: ${BOT9_DB_URL}
+      DATABASE_NAME: ${BOT9_DB_NAME}
+
+  bot10:
+    image: file-share-bot:latest
+    container_name: filesharebot_10
+    restart: unless-stopped
+    depends_on:
+      - bot1
+    ports:
+      - "${BOT10_PORT}:${BOT10_PORT}"
+    environment:
+      <<: *shared-env
+      TG_BOT_TOKEN: ${BOT10_TOKEN}
+      PORT: ${BOT10_PORT}
+      DATABASE_URL: ${BOT10_DB_URL}
+      DATABASE_NAME: ${BOT10_DB_NAME}
