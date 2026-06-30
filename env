@@ -1,0 +1,85 @@
+############################################
+# SHARED CONFIG — same for ALL 10 bots
+# (everything except token/port/mongo url/mongo db name)
+############################################
+APP_ID=14298205
+API_HASH=28df6d84da76d8606bf5f0e71ecfb62c
+OWNER_ID=1458235021
+CHANNEL_ID=-1001755253960
+
+FORCE_SUB_CHANNEL_1=-1001899642588
+FORCE_SUB_CHANNEL_2=-1001849467785
+FORCE_SUB_CHANNEL_3=-1001855603689
+FORCE_SUB_CHANNEL_4=-1001895335215
+
+TG_BOT_WORKERS=4
+START_MESSAGE=<b>Hello {first}\nI store private files for @NAKFLIXTV.</b>
+FORCE_SUB_MESSAGE=<b>Hello👋 {first}</b>\n<b>Kindly JOIN CHANNEL 1, 2, 3 and 4 Then press ♻️ Try Again ♻️ to continue. 👇</b>
+CUSTOM_CAPTION=➥ 𝗩𝗜𝗦𝗜𝗧 & 𝗝𝗢𝗜𝗡 👉 @NAKFLIXTV
+ADMINS=1458235021
+PROTECT_CONTENT=False
+DISABLE_CHANNEL_BUTTON=False
+
+############################################
+# PER-BOT CONFIG — only these differ per bot
+############################################
+
+# ---- Bot 1 ----
+BOT1_TOKEN=
+BOT1_PORT=8081
+BOT1_DB_URL=
+BOT1_DB_NAME=FileSharedb1
+
+# ---- Bot 2 ----
+BOT2_TOKEN=
+BOT2_PORT=8082
+BOT2_DB_URL=
+BOT2_DB_NAME=FileSharedb2
+
+# ---- Bot 3 ----
+BOT3_TOKEN=
+BOT3_PORT=8083
+BOT3_DB_URL=
+BOT3_DB_NAME=FileSharedb3
+
+# ---- Bot 4 ----
+BOT4_TOKEN=
+BOT4_PORT=8084
+BOT4_DB_URL=
+BOT4_DB_NAME=FileSharedb4
+
+# ---- Bot 5 ----
+BOT5_TOKEN=
+BOT5_PORT=8085
+BOT5_DB_URL=
+BOT5_DB_NAME=FileSharedb5
+
+# ---- Bot 6 ----
+BOT6_TOKEN=
+BOT6_PORT=8086
+BOT6_DB_URL=
+BOT6_DB_NAME=FileSharedb6
+
+# ---- Bot 7 ----
+BOT7_TOKEN=
+BOT7_PORT=8087
+BOT7_DB_URL=
+BOT7_DB_NAME=FileSharedb7
+
+# ---- Bot 8 ----
+BOT8_TOKEN=
+BOT8_PORT=8088
+BOT8_DB_URL=
+BOT8_DB_NAME=FileSharedb8
+
+# ---- Bot 9 ----
+BOT9_TOKEN=
+BOT9_PORT=8089
+BOT9_DB_URL=
+BOT9_DB_NAME=FileSharedb9
+
+# ---- Bot 10 ----
+BOT10_TOKEN=
+BOT10_PORT=8090
+BOT10_DB_URL=
+BOT10_DB_NAME=FileSharedb10
